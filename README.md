@@ -1,2 +1,4 @@
-# 250717_CATROBOT
-Flask server
+猫型ROBOTのタブレット画面に
+Flask serverを利用してubuntuからリモートで
+画像を切り替えて表示したい
+
