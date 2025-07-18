@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+  <script>
+  setInterval(() => location.reload(), 3000);  // 5秒ごとに自動リロード
+</script>
+<head>
+  <meta charset="utf-8">
+  <title>画像表示</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      background-color: black;
+    }
+    img {
+      width: 100vw;
+      height: 100vh;
+      object-fit: contain; /* 画像全体を収める。fillにすると引き伸ばし */
+      display: block;
+    }
+    .buttons {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+    }
+  </style>
+</head>
+<body>
+  <img src="{{ url_for('static', filename=image_file) }}">
+  
+  {% if show_buttons %}
+    <div class="buttons">
+      <a href="{{ url_for('prev_image') }}"><button>前へ</button></a>
+      <a href="{{ url_for('next_image') }}"><button>次へ</button></a>
+    </div>
+  {% endif %}
+</body>
+</html>
